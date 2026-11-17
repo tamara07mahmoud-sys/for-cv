@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "author": "User",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 100, "left": 100, "attrs": {} },
+    { "type": "wokwi-mpu6050", "id": "mpu1", "top": -60, "left": 350, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "mq135_sim", "top": 200, "left": 350, "attrs": { "vmax": "5" } }
+  ],
+  "connections": [
+    [ "uno:GND.1", "mpu1:GND", "black", [ "v0" ] ],
+    [ "uno:5V", "mpu1:VCC", "red", [ "v0" ] ],
+    [ "uno:A5", "mpu1:SCL", "yellow", [ "v0" ] ],
+    [ "uno:A4", "mpu1:SDA", "green", [ "v0" ] ],
+
+    [ "uno:GND.2", "mq135_sim:GND", "black", [ "v0" ] ],
+    [ "uno:5V", "mq135_sim:VCC", "red", [ "v0" ] ],
+    [ "uno:A0", "mq135_sim:SIG", "blue", [ "v0" ] ]
+  ]
+}
